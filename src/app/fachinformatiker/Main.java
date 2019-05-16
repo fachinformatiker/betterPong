@@ -2,6 +2,7 @@ package app.fachinformatiker;
 
 import app.fachinformatiker.constants.constants;
 import app.fachinformatiker.constants.en;
+import app.fachinformatiker.model.addPoint;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
