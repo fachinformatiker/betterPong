@@ -8,10 +8,14 @@
  *
  */
 
-package app.fachinformatiker;
+package app.fachinformatiker.betterPong;
 
-import app.fachinformatiker.constants.constants;
-import app.fachinformatiker.constants.en;
+import app.fachinformatiker.betterPong.constants.constants;
+import app.fachinformatiker.betterPong.constants.en;
+import app.fachinformatiker.betterPong.model.Gameloop;
+import app.fachinformatiker.betterPong.view.Playfield;
+import javafx.animation.AnimationTimer;
+import javafx.stage.Stage;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -22,17 +26,26 @@ import java.awt.event.KeyListener;
 
 public class Main implements KeyListener {
 
+    private Stage primaryStage;
+    private AnimationTimer mainLoop;
+
     public static void main(String[] args) {
+
+        Gameloop gameloop = new Gameloop();
         boolean gameStarted = constants.GAME_STARTED;
+        Playfield playfield = new Playfield();
 
         System.out.println(constants.BETTER_PONG);
         System.out.println(en.WELCOME);
 
-        while (gameStarted) {
+        gameloop.initialize_game();
 
+        gameStarted = true;
+
+        while (gameStarted) {
+            gameloop.gameloop();
         }
     }
-
 
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -54,4 +67,5 @@ public class Main implements KeyListener {
     public void keyTyped(KeyEvent e) {
 
     }
+
 }
