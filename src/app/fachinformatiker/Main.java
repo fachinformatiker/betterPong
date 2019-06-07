@@ -1,12 +1,24 @@
+/*
+ *
+ *  * Copyright (c) 2019.
+ *  * To learn more about my code have a look at:
+ *  * - my GitHub page -> github.com/fachinformatiker
+ *  * - my blog -> fachinformatiker.app
+ *  * - my YouTube channel -> youtube.com/psvisualdesign
+ *
+ */
+
 package app.fachinformatiker;
 
 import app.fachinformatiker.constants.constants;
 import app.fachinformatiker.constants.en;
-import app.fachinformatiker.model.addPoint;
 
-import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+/**
+ * @author Patrick Szalewicz <info@fachinformatiker.app>
+ */
 
 public class Main implements KeyListener {
 
@@ -15,11 +27,6 @@ public class Main implements KeyListener {
 
         System.out.println(constants.BETTER_PONG);
         System.out.println(en.WELCOME);
-
-        JFrame myFrame = new JFrame(constants.BETTER_PONG);
-        myFrame.setSize(constants.WIDTH, constants.HEIGHT);
-        myFrame.setVisible(true);
-        myFrame.setDefaultCloseOperation(myFrame.EXIT_ON_CLOSE);
 
         while (gameStarted) {
 
