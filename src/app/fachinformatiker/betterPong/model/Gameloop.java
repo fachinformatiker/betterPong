@@ -17,42 +17,41 @@ import app.fachinformatiker.betterPong.constants.constants;
  */
 public class Gameloop {
 
-    public static boolean MOVE_BALL_DOWN;
-    public static boolean MOVE_BALL_RIGHT;
-    public static double POS_X_BALL;
-    public static double POS_Y_BALL;
-    public static int POS_X_PLAYER_ONE;
-    public static int POS_X_PLAYER_TWO;
+    static boolean MOVE_BALL_DOWN;
+    static boolean MOVE_BALL_RIGHT;
+    static double POS_X_BALL;
+    static double POS_Y_BALL;
+    static int POS_X_PLAYER_ONE;
+    static int POS_X_PLAYER_TWO;
     public static int POS_Y_PLAYER_ONE;
     public static int POS_Y_PLAYER_TWO;
-    public static int SCORE_PLAYER_ONE;
-    public static int SCORE_PLAYER_TWO;
-    public static boolean MOVE;
+    static int SCORE_PLAYER_ONE;
+    static int SCORE_PLAYER_TWO;
+    static boolean MOVE;
 
-    Movement movement = new Movement();
-    Points points = new Points();
+    private Movement movement = new Movement();
 
     public void initialize_game() {
-        this.MOVE_BALL_DOWN = constants.MOVE_BALL_DOWN;
-        this.MOVE_BALL_RIGHT = constants.MOVE_BALL_RIGHT;
-        this.POS_X_BALL = constants.POS_X_BALL;
-        this.POS_Y_BALL = constants.POS_Y_BALL;
-        this.POS_X_PLAYER_ONE = constants.POS_X_PLAYER_ONE;
-        this.POS_X_PLAYER_TWO = constants.POS_X_PLAYER_TWO;
+        MOVE_BALL_DOWN = constants.MOVE_BALL_DOWN;
+        MOVE_BALL_RIGHT = constants.MOVE_BALL_RIGHT;
+        POS_X_BALL = constants.POS_X_BALL;
+        POS_Y_BALL = constants.POS_Y_BALL;
+        POS_X_PLAYER_ONE = constants.POS_X_PLAYER_ONE;
+        POS_X_PLAYER_TWO = constants.POS_X_PLAYER_TWO;
         //this.POS_Y_PLAYER_ONE = constants.POS_Y_PLAYER_ONE;
         //this.POS_Y_PLAYER_TWO= constants.POS_Y_PLAYER_TWO;
-        this.SCORE_PLAYER_ONE = constants.SCORE_PLAYER_ONE;
-        this.SCORE_PLAYER_TWO= constants.SCORE_PLAYER_TWO;
-        this.MOVE = constants.MOVE;
+        SCORE_PLAYER_ONE = constants.SCORE_PLAYER_ONE;
+        SCORE_PLAYER_TWO= constants.SCORE_PLAYER_TWO;
+        MOVE = constants.MOVE;
     }
 
     public void gameloop() {
         movement.move_right();
         movement.move_down();
         movement.showPosition();
-        points.showPoints();
-        points.showPoints("playerOne");
-        points.showPoints("playerTwo");
+        Points.showPoints();
+        Points.showPoints("playerOne");
+        Points.showPoints("playerTwo");
     }
 
 }
