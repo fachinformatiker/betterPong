@@ -11,11 +11,14 @@
 package app.fachinformatiker.betterPong.view;
 
 import app.fachinformatiker.betterPong.constants.constants;
+import app.fachinformatiker.betterPong.model.Gameloop;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
@@ -25,47 +28,31 @@ public class Playfield extends Application {
 
     private static int WIDTH = constants.WIDTH;
     private static int HEIGHT = constants.HEIGHT;
+    private static int BALL = constants.BALL;
+    private static double POS_X_BALL = Gameloop.POS_X_BALL;
+    private static double POS_Y_BALL = Gameloop.POS_Y_BALL;
+    private Circle ball = new Circle(POS_X_BALL, POS_Y_BALL, BALL, Color.WHITE);
 
-    public static void main(String[] args) {
-        Application.launch(args);
+    public static void main() {
+        Application.launch();
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Create the Canvas
-        Canvas canvas = new Canvas(WIDTH, HEIGHT);
-        // Set the width of the Canvas
-        canvas.setWidth(WIDTH);
-        // Set the height of the Canvas
-        canvas.setHeight(HEIGHT);
+        FXMLLoader loader = new FXMLLoader();
+        loader.getNamespace().put("width", WIDTH);
+        loader.getNamespace().put("height", HEIGHT);
+        loader.setLocation(getClass().getResource("0.fxml"));
 
-        // Get the graphics context of the canvas
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        Pane content = loader.load();
+        content.setPadding(new Insets(10));
 
-        // Draw a Text
-        gc.strokeText("Hello Canvas", 150, 100);
+        ball.setCenterX(POS_X_BALL);
+        ball.setCenterY(POS_Y_BALL);
+        content.getChildren().add(ball);
 
-        // Create the Pane
-        Pane root = new Pane();
-        // Set the Style-properties of the Pane
-        root.setStyle("-fx-padding: 10;" +
-                "-fx-border-style: solid inside;" +
-                "-fx-border-width: 2;" +
-                "-fx-border-insets: 5;" +
-                "-fx-border-radius: 5;" +
-                "-fx-border-color: blue;");
-
-        // Add the Canvas to the Pane
-        root.getChildren().add(canvas);
-        // Create the Scene
-        Scene scene = new Scene(root);
-        // Add the Scene to the Stage
-        primaryStage.setScene(scene);
-        // Set the Title of the Stage
-        primaryStage.setTitle("Creation of a Canvas");
-        // Display the Stage
+        primaryStage.setScene(new Scene(content));
         primaryStage.show();
-
     }
 
     public void createPlayfield() {

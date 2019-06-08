@@ -33,7 +33,6 @@ public class Main implements KeyListener {
 
         Gameloop gameloop = new Gameloop();
         boolean gameStarted = constants.GAME_STARTED;
-        Playfield playfield = new Playfield();
 
         System.out.println(constants.BETTER_PONG);
         System.out.println(en.WELCOME);

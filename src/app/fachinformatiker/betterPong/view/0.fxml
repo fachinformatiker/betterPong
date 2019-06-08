@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?scenebuilder-background-color 0x000000ff?>
+
+<!--
+  ~ /*
+  ~  * Copyright (c) 2019.
+  ~  * To learn more about my code have a look at:
+  ~  * - my GitHub page -> github.com/fachinformatiker
+  ~  * - my blog -> fachinformatiker.app
+  ~  * - my YouTube channel -> youtube.com/psvisualdesign
+  ~  */
+  -->
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="${height}" prefWidth="${width}" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="${width}">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Pane layoutX="0.0" layoutY="24.0" prefHeight="${height}" prefWidth="${width}">
+      <style>
+        -fx-background-color: #000000;
+      </style>
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="109.0" layoutX="9.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

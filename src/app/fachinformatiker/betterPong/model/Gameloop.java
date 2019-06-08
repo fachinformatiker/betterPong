@@ -11,6 +11,7 @@
 package app.fachinformatiker.betterPong.model;
 
 import app.fachinformatiker.betterPong.constants.constants;
+import app.fachinformatiker.betterPong.view.Playfield;
 
 /**
  * @author Patrick Szalewicz <info@fachinformatiker.app>
@@ -19,8 +20,8 @@ public class Gameloop {
 
     static boolean MOVE_BALL_DOWN;
     static boolean MOVE_BALL_RIGHT;
-    static double POS_X_BALL;
-    static double POS_Y_BALL;
+    public static double POS_X_BALL;
+    public static double POS_Y_BALL;
     static int POS_X_PLAYER_ONE;
     static int POS_X_PLAYER_TWO;
     public static int POS_Y_PLAYER_ONE;
@@ -43,6 +44,8 @@ public class Gameloop {
         SCORE_PLAYER_ONE = constants.SCORE_PLAYER_ONE;
         SCORE_PLAYER_TWO= constants.SCORE_PLAYER_TWO;
         MOVE = constants.MOVE;
+
+        Playfield.main();
     }
 
     public void gameloop() {

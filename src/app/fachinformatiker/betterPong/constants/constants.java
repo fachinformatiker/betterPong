@@ -30,8 +30,8 @@ public interface constants {
     int WIDTH = 1024;
     int HEIGHT = 768;
     double ZERO = 0.0;
-    double POS_X_BALL = 612;
-    double POS_Y_BALL = 384;
+    double POS_X_BALL = WIDTH / 2;
+    double POS_Y_BALL = HEIGHT / 2;
     int PADDLE_WIDTH = 100;
     int PADDLE_HEIGHT = 15;
     boolean GAME_STARTED = false;
